@@ -62,21 +62,23 @@
 
 	\begin{frame}{What is Encryption?} % Simon
 		\begin{equation}
-			\operatorname{ENC}: {\text{plaintexts}}
+			\operatorname{ENC}: \underset{\cong\;\mathbb{N}}{\{\text{plaintexts}\}}
 						\overset{\text{bijective}}{\longrightarrow}
-						{\text{ciphertexts}}\nonumber
+						\underset{\cong\;\mathbb{N}}{\{\text{ciphertexts}\}}\nonumber
 		\end{equation}
 		\begin{itemize}
 			\item The function should be easily reversible for the
 			recipient but impossible to reverse for a 3rd party
 
-			\item Any information can be represented as a (binary)
-			number $\leadsto \operatorname{ENC}: \mathbb{N}
- 			\rightarrow \mathbb{N}$
+ 			\item \textbf{Symmetric encryption:} $\operatorname{ENC}$
+ 			and $\operatorname{ENC}^{-1}$ are generated from one secret
+ 			number, referred to as \textbf{the shared secret} or
+ 			\textbf{secret key}.
 
- 			\item Typically, $\operatorname{ENC}$ (and its inverse) are
- 			generated from a secret number, referred to as \textbf{the
- 			shared secret} or \textbf{secret key}.
+ 			\item \textbf{Asymmetric encryption:} $\operatorname{ENC}$
+ 			is generated from a \textbf{public key}, known to everyone,
+ 			$\operatorname{ENC}^{-1}$ generated from a \textbf{private
+ 			key}, only known to the recipient.
 
 		\end{itemize}
 	\end{frame}
