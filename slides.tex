@@ -1,4 +1,4 @@
-%!TEX root = main.tex
+%!TEX root = slides.tex
 %!TEX program = xelatex
 % (für das LaTeXtools Sublime plugin)
 
@@ -38,15 +38,16 @@
 
 % And now for the real deal...
 \begin{document}
-
-	\section{Opener} % Simon
+	% commented out so it doesn't appear in the table of contents
+	%\section{Introduction} % Simon
 	\begin{frame}
-		\titlepage
+		\begin{center}
+		\includegraphics[width=0.8\textwidth]{images/xkcd-security.png}
+		\end{center}
 	\end{frame}
 
-	% Opener: Why do we need encryption?
-	\begin{frame}{Encryption} % Simon
-
+	\begin{frame}
+		\titlepage
 	\end{frame}
 
 	% Structure of the talk
@@ -54,8 +55,10 @@
 		\tableofcontents
 	\end{frame}
 
-	% Elementary encryption techniques.
-	\section{Encryption Techniques}
+	\section{Introduction to Encryption}
+	\begin{frame}{What is Encryption?} % Simon
+
+	\end{frame}
 
 	\begin{frame}{Shifting Caesar Cipher} % Max
 		\begin{columns}
@@ -134,12 +137,8 @@
 
 	\end{frame}
 
-	\begin{frame}{Quantum Key Exchange} % Max
-
-	\end{frame}
-
 	% Methods of Quantum Key Exchange
-	\section{Quantum Key Exchange}
+	\section{Quantum Key Distribution}
 
 	\begin{frame}{BB-84} % Max
 
