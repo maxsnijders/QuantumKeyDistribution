@@ -1,8 +1,6 @@
 \documentclass{beamer}
 
-%Sample should be placed in parent directory of the template directory!
-%This document needs to be compiled TWICE on first run
-%This file needs to be compiled with XeLaTeX due to its reliance upon the fontspec package.
+%Blablabla front matter....
 
 \title{Quantum Key Distribution}
 \subtitle{Foundational Aspects of Quantum Mechanics}
@@ -14,6 +12,8 @@
 
 \usepackage[LastSlideNotCounted,ProgressBar,NoPageCounter]{beamer-template-mk-i/beamerthememxmki}
 \hypersetup{pdfpagemode=FullScreen}
+
+% Use this for the handout!
 
 %\usepackage{pgfpages}
 %\pgfpagesuselayout{4 on 1}[a4paper]
@@ -29,61 +29,68 @@
 {\begin{quote}\openquote}
 		{\hfill\closequote\end{quote}}
 
-%Presentatie mag maar 8 minuten duren!
 
+% And now for the real deal...
 \begin{document}
 	
-	%Eerste slide, deze is voor bij het voorstellen e.d.
-	\section{Presenteren en Communiceren}
+	\section{Opener}
 	\begin{frame}
 		\titlepage
 	\end{frame}
 	
-	\begin{frame}{Wat is geleiding?}
-				\begin{itemize}
-					\item<2-> Macroscopisch \onslide<4->{$\rightarrow$ Klassiek}
-					\item<3-> Microscopisch \onslide<5->{$\rightarrow$ Quantum}
-				\end{itemize}
-				\note{Deze slide maakt het onderscheid tussen geleiding op grote en kleine schaal duidelijk}
+	% Opener: Why do we need encryption?
+	\begin{frame}{Encryption}
+		
 	\end{frame}
 	
-	\begin{frame}{Wat is geleiding?}
-		\begin{shadequote}
-			Geleiding op atomaire schaal is de kans voor een electron om door een structuur heen te komen
-		\end{shadequote}
-		\note{Opzet van deze slide is om het concept van geleiding als een kans (transmissiecoefficient) duidelijk te maken.}
+	% Structure of the talk
+	\begin{frame}{Contents}
+		
 	\end{frame}
 	
-	\begin{frame}{De transmissieco\"efficient}
-		Hier een simpel model voor de transmissiecoefficient
-		\note{Hier toon ik graag een quantum systeem waarbij er duidelijk sprake is van een transmissiecoefficient, zoals een simpele potentiaalbariere.}
+	% Elementary encryption techniques.
+	\section{Encryption Techniques}
+	
+	\begin{frame}{Shifting Caesar Cipher}
+		\note{Anything typed here will be outputted with the handouts}
+	\end{frame}
+
+	\begin{frame}{Permutative Caesar Cipher}
+		
 	\end{frame}
 	
-	\begin{frame}{Theoretisch Model}
-		\note{Deze slide moet een simpel theoretisch model duidelijk maken waaruit we de transmissiecoefficient kunnen gaan bepalen}
+	\begin{frame}{XOR}
+		
 	\end{frame}
 	
-	\begin{frame}{$G_0$}
-		Voorspelling uit model
-		\note{Op deze slide staat groot de numerieke waarde (en de formule ervoor) van $G_0$.}
+	\begin{frame}{One-Time Pad}
+		
+	\end{frame}
+
+	% Key distribution section
+	\section{Key Distribution}
+	
+	\begin{frame}{Diffie-Hellman}
+		
 	\end{frame}
 	
-	\begin{frame}{Opstelling}
-		Simpel diagrammetje
-		\note{Simpel en strak diagrammetje met daarop de opstelling (breken en maken van atomair contact)}
+	\begin{frame}{Public/Private Key}
+		
 	\end{frame}
 	
-	\begin{frame}{Geleidingstrappetje}
-		Hier een plaatje van een geleidingstrappetje
-		\note{Plotje van een geleingstrappetje waarbij de kwantisatie van geleiding duidelijk zichtbaar is.}
+	\begin{frame}{Quantum Key Exchange}
+		
 	\end{frame}
 	
-	\begin{frame}{Histogram}
-		Hier een geleidingshistogram
-		\note{Histogram van de geleiding waarbij de kwantisatie duidelijk zichtbaar is.}
+	% Methods of Quantum Key Exchange
+	
+	\begin{frame}{BB-84}
+		
 	\end{frame}
 	
-	%\section{Einde}
+	
+
+	% A black slide to end the talk
 	\setbeamercolor{background canvas}{bg=black}
 	\begin{frame}[plain]\end{frame}
 	
