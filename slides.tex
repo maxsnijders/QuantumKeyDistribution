@@ -158,24 +158,29 @@
 	\end{frame}
 
 	\begin{frame}{One-Time Pad} % Simon
-		\begin{itemize}
-			\item One-time pad = key of size $n$, where $n=$ length of message
-
-			\item One-time pad is only used once
-
-			\item Unbreakable.
-
-		\end{itemize}
+		One-time pad = random key of size $n$ ($n=$ length of message),
+		only used once.
 
 		\begin{table}
-			\begin{tabular}{l | c c c c c c }
-				Plaintext  & 1 & 0 & 1 & 1 & 1 $\hdots$ \\
-				%\hline \\
-				Key        & 1 & 1 & 0 & 1 & 0 $\hdots$ \\
-				%\hline \\
-				Ciphertext & 0 & 1 & 1 & 0 & 1 $\hdots$ \\
+			\begin{tabular}{l | c c c c c c c c }
+				Bit \#     & 1 & 2 & 3 & 4 & \onslide<2->{5} & \onslide<3->{6} & \onslide<4->{$\hdots$} & \onslide<5->{$n$} \\
+				\hline
+				Plaintext  & 1 & 0 & 1 & 1 & \onslide<2->{1} & \onslide<3->{0} & \onslide<4->{$\hdots$} & \onslide<5->{1} \\
+				%\hline
+				Key        & 1 & 1 & 0 & 1 & \onslide<2->{0} & \onslide<3->{1} & \onslide<4->{$\hdots$} & \onslide<5->{1} \\
+				%\hline
+				Ciphertext & 0 & 1 & 1 & 0 & \onslide<2->{1} & \onslide<3->{1} & \onslide<4->{$\hdots$} & \onslide<5->{0} \\
 			\end{tabular}
 		\end{table}
+
+		\textbf{Unbreakable} since:
+
+		No correlation between encrypted bits at positions i and j (or
+		between subsequent encrypted messages). $\implies$ Every
+		possible plaintext can be obtained from the ciphertext by
+		choosing the right key. $\implies$ No way to find out whether
+		key / plaintext is correct.
+
 	\end{frame}
 
 	% Key distribution section
