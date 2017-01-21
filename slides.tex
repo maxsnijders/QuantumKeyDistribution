@@ -56,8 +56,29 @@
 	\end{frame}
 
 	\section{Introduction to Encryption}
-	\begin{frame}{What is Encryption?} % Simon
+	\begin{frame}{The setting}
+		Alice and Bob
+	\end{frame}
 
+	\begin{frame}{What is Encryption?} % Simon
+		\begin{equation}
+			\operatorname{ENC}: {\text{plaintexts}}
+						\overset{\text{bijective}}{\longrightarrow}
+						{\text{ciphertexts}}\nonumber
+		\end{equation}
+		\begin{itemize}
+			\item The function should be easily reversible for the
+			recipient but impossible to reverse for a 3rd party
+
+			\item Any information can be represented as a (binary)
+			number $\leadsto \operatorname{ENC}: \mathbb{N}
+ 			\rightarrow \mathbb{N}$
+
+ 			\item Typically, $\operatorname{ENC}$ (and its inverse) are
+ 			generated from a secret number, referred to as \textbf{the
+ 			shared secret} or \textbf{secret key}.
+
+		\end{itemize}
 	\end{frame}
 
 	\begin{frame}{Shifting Caesar Cipher} % Max
