@@ -1,0 +1,90 @@
+\documentclass{beamer}
+
+%Sample should be placed in parent directory of the template directory!
+%This document needs to be compiled TWICE on first run
+%This file needs to be compiled with XeLaTeX due to its reliance upon the fontspec package.
+
+\title{Quantum Key Distribution}
+\subtitle{Foundational Aspects of Quantum Mechanics}
+\date{01-02-2017}
+\author[Hirscher, Snijders]{Simon Hirscher \& Max Snijders}
+
+%\setbeameroption{show notes}
+%\setbeamertemplate{note page}[plain]
+
+\usepackage[LastSlideNotCounted,ProgressBar,NoPageCounter]{beamer-template-mk-i/beamerthememxmki}
+\hypersetup{pdfpagemode=FullScreen}
+
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[a4paper]
+
+\newcommand*{\openquote}{\tikz[remember picture,overlay,xshift=-15pt,yshift=-10pt]
+	\node (OQ) {\fontsize{60}{60}\selectfont``};\kern0pt}
+\newcommand*{\closequote}{\tikz[remember picture,overlay,xshift=15pt,yshift=10pt]
+	\node (CQ) {\fontsize{60}{60}\selectfont''};}
+% select a colour for the shading
+\definecolor{shadecolor}{named}{white}
+% wrap everything in its own environment
+\newenvironment{shadequote}%
+{\begin{quote}\openquote}
+		{\hfill\closequote\end{quote}}
+
+%Presentatie mag maar 8 minuten duren!
+
+\begin{document}
+	
+	%Eerste slide, deze is voor bij het voorstellen e.d.
+	\section{Presenteren en Communiceren}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\begin{frame}{Wat is geleiding?}
+				\begin{itemize}
+					\item<2-> Macroscopisch \onslide<4->{$\rightarrow$ Klassiek}
+					\item<3-> Microscopisch \onslide<5->{$\rightarrow$ Quantum}
+				\end{itemize}
+				\note{Deze slide maakt het onderscheid tussen geleiding op grote en kleine schaal duidelijk}
+	\end{frame}
+	
+	\begin{frame}{Wat is geleiding?}
+		\begin{shadequote}
+			Geleiding op atomaire schaal is de kans voor een electron om door een structuur heen te komen
+		\end{shadequote}
+		\note{Opzet van deze slide is om het concept van geleiding als een kans (transmissiecoefficient) duidelijk te maken.}
+	\end{frame}
+	
+	\begin{frame}{De transmissieco\"efficient}
+		Hier een simpel model voor de transmissiecoefficient
+		\note{Hier toon ik graag een quantum systeem waarbij er duidelijk sprake is van een transmissiecoefficient, zoals een simpele potentiaalbariere.}
+	\end{frame}
+	
+	\begin{frame}{Theoretisch Model}
+		\note{Deze slide moet een simpel theoretisch model duidelijk maken waaruit we de transmissiecoefficient kunnen gaan bepalen}
+	\end{frame}
+	
+	\begin{frame}{$G_0$}
+		Voorspelling uit model
+		\note{Op deze slide staat groot de numerieke waarde (en de formule ervoor) van $G_0$.}
+	\end{frame}
+	
+	\begin{frame}{Opstelling}
+		Simpel diagrammetje
+		\note{Simpel en strak diagrammetje met daarop de opstelling (breken en maken van atomair contact)}
+	\end{frame}
+	
+	\begin{frame}{Geleidingstrappetje}
+		Hier een plaatje van een geleidingstrappetje
+		\note{Plotje van een geleingstrappetje waarbij de kwantisatie van geleiding duidelijk zichtbaar is.}
+	\end{frame}
+	
+	\begin{frame}{Histogram}
+		Hier een geleidingshistogram
+		\note{Histogram van de geleiding waarbij de kwantisatie duidelijk zichtbaar is.}
+	\end{frame}
+	
+	%\section{Einde}
+	\setbeamercolor{background canvas}{bg=black}
+	\begin{frame}[plain]\end{frame}
+	
+\end{document}

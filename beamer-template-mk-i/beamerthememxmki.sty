@@ -1,0 +1,67 @@
+%Theme Max Mark I
+%A less-is-more theme for XeLaTeX, using the Fira font (Mozilla sourced)
+%Options:
+%LastSlideNotCounted	:	Last slide is not counted for the progress bar and the page counter
+%ProgressBar			:	A subtle progress bar is drawn at the bottom of each slide (except for the title slide)
+%NoPageCounter			:	If set, no page counter is shown
+
+\mode<presentation>
+
+%Options
+\newif\if@doOptionLastSlide
+\@doOptionLastSlidefalse
+\DeclareOption{LastSlideNotCounted}{\@doOptionLastSlidetrue}
+
+\newif\if@doOptionProgressBar
+\@doOptionProgressBarfalse
+\DeclareOption{ProgressBar}{\@doOptionProgressBartrue}
+
+\newif\if@doOptionNoPageCounter
+\@doOptionNoPageCounterfalse
+\DeclareOption{NoPageCounter}{\@doOptionNoPageCountertrue}
+
+\ProcessOptions
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{fontspec}
+\usepackage{mathtools, amsmath, amsfonts, tikz}
+\usepackage{animate}	
+
+% Settings
+\usepackage{beamer-template-mk-i/beamerinnerthememxmki}
+\usepackage{beamer-template-mk-i/beamerouterthememxmki}
+\usepackage{beamer-template-mk-i/beamercolorthememxmki}
+\usepackage{beamer-template-mk-i/beamerfontthememxmki}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]  
+
+%Tikz/Beamer integration
+\everymath{\displaystyle}
+
+%Mem for how many slides not to count for the page count and the progress bar
+\newcommand{\SlidesToSubtract}{0}
+
+%Option: last slide!
+\if@doOptionLastSlide
+	\renewcommand{\SlidesToSubtract}{1}
+\fi
+
+%Mem for progress bar option
+\newcommand{\ProgressBarOn}{0}
+
+%Option: Progress bar!
+\if@doOptionProgressBar
+	\renewcommand{\ProgressBarOn}{1}
+\fi
+
+%Mem for no page counter option
+\newcommand{\NoPageCounterOn}{0}
+
+%Option: No page counter
+\if@doOptionNoPageCounter
+	\renewcommand{\NoPageCounterOn}{1}
+\fi
+
+\mode<all>

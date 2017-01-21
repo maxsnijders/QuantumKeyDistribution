@@ -1,0 +1,87 @@
+\mode<presentation>
+
+%Draws the background for the title page
+%In TIKZ Mode
+\newcommand\drawbackgroundtitlepage{
+ 	%\fill[color=brown] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+  	%\fill[color=orange] (0,0) rectangle(2.95,1.9);
+  	%\fill[color=blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.9);
+  	
+   	\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+}
+
+
+%Draws the background for all non-title-page pages
+%In TIKZ Mode
+\newcommand\drawbackground{
+	
+}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  	\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    
+    %Clear if not on first page
+  	\ifnum\thepage>1\relax%
+   		%\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   		\drawbackground
+   	\else
+   		 \drawbackgroundtitlepage
+   	\fi
+   
+  	\end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{mxmki}[1][]{ 	
+   	\vskip3cm
+    
+    \begin{beamercolorbox}[wd=11cm,sep=8pt,#1]{title page header}
+      	\begin{flushright}
+      		\usebeamerfont{title} \textbf{\inserttitle}
+      	\end{flushright}
+    \end{beamercolorbox}
+    
+    \vspace{-1cm}
+    
+    \begin{tikzpicture}
+    	\draw[Bordeaux, ultra thick] (0,0) --  (11,0);
+    \end{tikzpicture}
+    
+        \ifx\insertsubtitle\empty{}
+    	
+    \else{
+       	\vspace{-0.7cm}
+       	\begin{beamercolorbox}[wd=11cm,sep=8pt,#1]{title page header}
+    	  	\begin{flushright}
+      			\usebeamerfont{subtitle} \textbf{\insertsubtitle}
+      		\end{flushright}
+    	\end{beamercolorbox}
+    	\vspace{-1.05cm}
+    }
+    \fi
+    
+    \vskip1cm
+    \begin{beamercolorbox}[wd=11cm,#1]{author}
+    	\begin{flushright}
+      		\usebeamerfont{author} \insertauthor
+      	\end{flushright}
+    \end{beamercolorbox}
+    
+    %\vskip0.2cm
+    \vspace{0cm}
+    
+    \begin{beamercolorbox}[wd=11cm,#1]{date}
+    	\begin{flushright}
+      		\usebeamerfont{author} \insertdate
+      	\end{flushright}
+    \end{beamercolorbox}
+    
+  	\vfill
+}
+
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+\mode<all>
