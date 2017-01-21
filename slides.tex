@@ -173,20 +173,48 @@
 			\end{tabular}
 		\end{table}
 
-		\textbf{Unbreakable} since:
+		\textbf{Unbreakable} \only<6>{since:
 
 		No correlation between encrypted bits at positions i and j (or
-		between subsequent encrypted messages). $\implies$ Every
-		possible plaintext can be obtained from the ciphertext by
-		choosing the right key. $\implies$ No way to find out whether
-		key / plaintext is correct.
+		between subsequent encrypted messages). \linebreak $\implies$
+		Every possible plaintext can be obtained from the ciphertext by
+		choosing the right key. \linebreak $\implies$ No way to find out
+		whether key / plaintext is correct.}
+
+		\only<7>{\vspace{1em}\begin{center}\includegraphics[width=0.2\textwidth]{images/obama_not_bad.jpg}\end{center}}
+
+		\vspace{3em}
 
 	\end{frame}
 
 	% Key distribution section
 	\section{Key Distribution}
 	\begin{frame}{The problem with exchanging the key} % Simon
+		% "So we've found the perfect encryption. What's the problem?"
 
+		How do we agree on the key in the first place? How can we do that securely? \linebreak
+		\onslide<2->{$\implies$ Two ways(?)}
+
+		\begin{enumerate}
+			\onslide<2->{
+			\item Meet in person every time we want to exchange a
+			message. \onslide<3->{
+			% Look of disapproval ಠ_ಠ
+			% Download the "Kedage" font here: http://brahmi.sourceforge.net/
+			\textbf{{\fontspec{Kedage} ಠ}\_{\fontspec{Kedage} ಠ}}
+			}
+			}
+
+			\onslide<4->{
+			\item Meet in person once, exchange a whole stack of paper
+			with a lot of keys for a lot of future messages.
+			}
+		\end{enumerate}
+
+		\vspace{1em}
+		\onslide<5->{
+		Okay, we don't actually have to meet in person…
+		}
 	\end{frame}
 
 	\begin{frame}{Diffie-Hellman Key Exchange (DHE)} % Max
