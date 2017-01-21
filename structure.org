@@ -1,0 +1,56 @@
+#+title: Quantum Key Distribution
+* Opener
+* Presentation of the structure
+- Maybe mention that this is also known as "quantum encryption", even
+  though, technically is not correct
+
+* What is encryption?
+- setting: Alice -> Bob
+- encryption = bijective function that's hard to reverse for anyone but Bob
+- usual ingredient: a shared secret that only Alice and Bob know (also
+  called symmetric encryption because both parties know the secret)
+- Don't mention public key cryptography here. While it does solve the
+  key exchange problem, the fundamental issues with classical
+  encryption (key length < message length) stay the same. (Plus it is
+  potentially susceptible to quantum attacks.)
+
+* Examples of symmetric encryption
+** Caesar's
+*** Simple shift (key of length n=1, entropy=26)
+- easily breakable (entropy=26)
+*** Permutation table (entropy=26!)
+- breakable through frequency analysis
+
+*** Look at the shift again -> apply not just one shift but multiple ones -> XOR
+** XOR (key of length n)
+- breakable through frequency analysis
+
+** One-time pad (key of length the size of the data, i.e. of arbitrary length)
+
+* The problem of the key exchange
+** Classically: Shared secret
+- Option 1: Meet up once to exchange key of finite length n, use it
+  repeatedly (problem: inperfect encryption, susceptible to brute
+  force)
+- Option 2: Meet up once to exchange to exchange stack of bibles (=
+  one-time pad) / meet up before every message exchange; use one-time
+  pad to encrypt
+
+** (Public-key cryptography)
+- Really quick introduction to public key cryptography
+
+** Diffie-Hellman
+- abstractly, through colors
+- Can be used to generate a new key when needed, i.e. we could also
+  implement a one-time pad through this (however: Computationally,
+  this is a lot of work.)
+- provides forward secrecy in case private keys get compromised but
+  no forward secrecy if algorithms break (because they are
+  quantum-breakable or something).
+
+** Note for myself:
+Why do we even need quantum key distribution?
+- provides secrecy even if public-key cryptography (which we need for
+  authentication) breaks
+
+* Quantum Key Distribution
