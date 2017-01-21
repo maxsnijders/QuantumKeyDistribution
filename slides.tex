@@ -24,6 +24,18 @@
 % \usepackage{pgfpages}
 % \pgfpagesuselayout{4 on 1}[a4paper]
 
+% Diagonal arrows
+\usepackage{mathtools}
+\newcommand{\myarrow}[1][-45]{%
+  \mathrel{%
+    \text{$
+     \begin{tikzpicture}[baseline = -0.5ex]
+       \node[inner sep=0pt,outer sep=0pt,rotate = #1] (a) at (0,0)  {$\leftrightarrow{}$};
+    \end{tikzpicture}
+    $}%
+  }%
+}%
+
 % Quotes are awesome! (Sometimes)
 
 \newcommand*{\openquote}{\tikz[remember picture,overlay,xshift=-15pt,yshift=-10pt]
@@ -199,7 +211,34 @@
 	\section{Quantum Key Distribution}
 
 	\begin{frame}{BB-84} % Max
+		\begin{columns}
+			\begin{column}{0.7\textwidth}
+				\begin{enumerate}
+					\item For each bit in the message:
+						\begin{enumerate}
+							\item Alice picks a basis randomly
+							\item Alice transmits the bit using this basis
+							\item Bob measures the bit using a randomly chosen basis.
+						\end{enumerate}
+					\item Alice and Bob exchange a list of chosen bases.
+					\item Where the chosen bases match Alice and Bob append the sent / measured bit to the shared key
+				\end{enumerate}
+			\end{column}
+			\vrule{}
+			\begin{column}{0.3\textwidth}
+				Basis / Bit encoding:
+				\begin{table}
+					\begin{tabular}{l | c  c}
+						  & 0 & 1 \\
+						  \hline
+						0 & $\myarrow[0]$ & $\myarrow[90]$ \\
+						1 & $\myarrow[45]$ & $\myarrow[-45]$ \\
+					\end{tabular}
+	
+				\end{table}
 
+			\end{column}
+		\end{columns}
 	\end{frame}
 
 	\begin{frame}{E-91} % Simon
