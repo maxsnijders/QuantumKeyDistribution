@@ -4,6 +4,8 @@
 
 \documentclass{beamer}
 
+\usepackage{csquotes}
+
 %Blablabla front matter....
 
 \title{Quantum Key Distribution}
@@ -110,7 +112,7 @@
 			\end{column}
 			\begin{column}{0.4\textwidth}
 				\begin{itemize}
-					\onslide<10->\item "HELLO" $\rightarrow$ "BYFFI"
+					\onslide<10->\item \enquote{HELLO} $\rightarrow$ \enquote{BYFFI}
 					\onslide<12->\item 26 options
 					\onslide<13->\item Vulnerable to \textbf{brute-force} attack.
 				\end{itemize}
@@ -137,7 +139,7 @@
 			\end{column}
 			\begin{column}{0.5\textwidth}
 				\begin{itemize}
-					\onslide<7->\item "ABBACD" $\rightarrow$ "GXXGCJ" 
+					\onslide<7->\item \enquote{ABBACD} $\rightarrow$ \enquote{GXXGCJ} 
 					\onslide<8->\item $26 \cdot 25 \cdot 24 \cdot \hdots \cdot 1 = 26! \approx 10^{26}$ options
 					\onslide<9->\item Vulnerable to \textbf{frequency analysis}.
 				\end{itemize}
