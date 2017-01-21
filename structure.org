@@ -66,3 +66,5 @@ Why do we even need quantum key distribution?
   secret, see:
   - https://en.wikipedia.org/wiki/Man-in-the-middle_attack#Quantum_cryptography
   - https://en.wikipedia.org/wiki/Quantum_key_distribution#Man-in-the-middle_attack
+  - Master's thesis on this topic: https://www.lysator.liu.se/~jc/mthesis/5_Unconditionally_secure_au.html
+  - https://arxiv.org/abs/1303.0210
