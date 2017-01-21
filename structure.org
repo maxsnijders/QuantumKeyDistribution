@@ -50,7 +50,19 @@
 
 ** Note for myself:
 Why do we even need quantum key distribution?
-- provides secrecy even if public-key cryptography (which we need for
-  authentication) breaks
+- It provides forward secrecy even if public-key cryptography (which
+  we need for authentication) breaks, in contrast to one-time pads
+  agreed upon through Diffie-Hellman
 
 * Quantum Key Distribution
+- Allows us to generate one-time pads
+
+** BB84
+** E91 / Ekert
+
+** Authentication of the classical channel
+- Apparently achieved by an "unconditionally secure authentication
+  scheme", e.g. Wegman-Carter authentication, which uses a pre-shared
+  secret, see:
+  - https://en.wikipedia.org/wiki/Man-in-the-middle_attack#Quantum_cryptography
+  - https://en.wikipedia.org/wiki/Quantum_key_distribution#Man-in-the-middle_attack
