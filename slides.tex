@@ -291,7 +291,7 @@
 	% Methods of Quantum Key Exchange
 	\section{Quantum Key Distribution}
 
-	\begin{frame}{BB-84} % Max
+	\begin{frame}{BB-84 Protocol} % Max
 		\begin{columns}
 			\begin{column}{\textwidth}
 				\begin{enumerate}
@@ -308,46 +308,20 @@
 		\end{columns}
 	\end{frame}
 	
-	\begin{frame}{BB-84 Protocol} % Max
+	\begin{frame}{BB-84 Example} % Max
 		\begin{columns}
 			\begin{column}{0.7\textwidth}
 				\begin{table}
 					\begin{tabular}{r | c | c | c | c  }
+						Bit no. & 1 & 2 & 3 & 4 \\
+						\hline
 						Alice's random data & 0 & 1 & 1 & 0 \\
-						Alice's random basis & 1 & 1 & 1 & 0 \\
-						Bob's random basis & 0 & 1 & 0 & 0 \\
+						Alice's random bases & 1 & 1 & 1 & 0 \\
+						Bob's random bases & 0 & 1 & 0 & 0 \\
+						\hline
 						Alice's sent values & $\myarrow[45]$ & $\myarrow[-45]$ & $\myarrow[-45]$ & $\myarrow[0]$ \\
 						Bob's measured values & ? & 1 & ? & 0 \\
-						Shared key & - & 1 & - & 0 
-					\end{tabular}
-				\end{table}
-			\end{column}
-			\vrule{}
-			\begin{column}{0.3\textwidth}
-				\begin{table}
-					\begin{tabular}{c | c  c}
-						 B \textbackslash \; V & 0 & 1 \\
-						  \hline
-						0 & $\myarrow[0]$ & $\myarrow[90]$ \\
-						1 & $\myarrow[45]$ & $\myarrow[-45]$ \\
-					\end{tabular}
-	
-				\end{table}
-
-			\end{column}
-		\end{columns}
-	\end{frame}
-
-	\begin{frame}{BB-84 example} % Max
-		\begin{columns}
-			\begin{column}{0.7\textwidth}
-				\begin{table}
-					\begin{tabular}{r | c | c | c | c  }
-						Alice's random data & 0 & 1 & 1 & 0 \\
-						Alice's random basis & 1 & 1 & 1 & 0 \\
-						Bob's random basis & 0 & 1 & 0 & 0 \\
-						Alice's sent values & $\myarrow[45]$ & $\myarrow[-45]$ & $\myarrow[-45]$ & $\myarrow[0]$ \\
-						Bob's measured values & ? & 1 & ? & 0 \\
+						\hline
 						Shared key & - & 1 & - & 0 
 					\end{tabular}
 				\end{table}
