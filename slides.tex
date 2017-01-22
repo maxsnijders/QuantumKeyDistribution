@@ -133,6 +133,8 @@
 					\onslide<10->\item \enquote{HELLO} $\rightarrow$ \enquote{BYFFI}
 					\onslide<12->\item 26 options
 					\onslide<13->\item Vulnerable to \textbf{brute-force} attack.
+					\onslide<13->\item Vulnerable to \textbf{frequency analysis}.
+					\onslide<13->\item Vulnerable to \textbf{known plaintext} attacks.
 				\end{itemize}
 			\end{column}
 		\end{columns}
@@ -145,7 +147,7 @@
 					\begin{table}
 						\begin{tabular}{ c | c }
 							Plaintext & Ciphertext \\
-							\hline\\
+							\hline
 							\onslide<2->{A & G \\}
 							\onslide<3->{B & X \\}
 							\onslide<4->{C & C \\}
@@ -160,6 +162,7 @@
 					\onslide<7->\item \enquote{ABBACD} $\rightarrow$ \enquote{GXXGCJ} 
 					\onslide<8->\item $26 \cdot 25 \cdot 24 \cdot \hdots \cdot 1 = 26! \approx 10^{26}$ options
 					\onslide<9->\item Vulnerable to \textbf{frequency analysis}.
+					\onslide<9->\item Vulnerable to \textbf{known plaintext} attacks.
 				\end{itemize}
 			\end{column}
 		\end{columns}
@@ -222,7 +225,7 @@
 						
 						\node at (0,0) {\huge 23, 5};
 
-						\node[anchor=east] at (-11,0) {\huge Random numbers};
+						\node[anchor=east] at (-11,0) {\huge \textit{Random} numbers};
 
 						\onslide<2->{
 							\draw[fill = red] (-5,0) circle(1);
@@ -281,6 +284,25 @@
 				\end{figure}
 			\end{column}
 		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{Diffie-Hellman Details} % Max
+		\begin{itemize}
+			\onslide<2->{
+				\item Choice of the two publicly known numbers not random: exponentiation and then taking the modulus should have maximum range and spread:
+					\begin{align*}
+						5^n \; \text{mod} \; 23 = \; &\mathbf{1}, \mathbf{5}, 2, 10, 4, 20, 8, 17, 16, 11, 9, 22, \\&18, 21, 13, 19, 3, 15, 6, 7, 12, 14, \mathbf{1}, \mathbf{5}, \hdots
+					\end{align*}
+			}
+			
+			\onslide<3->{
+				\item Exponentiation is easy to compute, hard to invert.
+			}
+			
+			\onslide<4->{
+				\item Impractical for one-time pad use
+			}
+		\end{itemize}
 	\end{frame}
 
 
