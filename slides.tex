@@ -302,9 +302,9 @@
 				\begin{enumerate}
 					\item For each bit in the message:
 						\begin{enumerate}
-							\item Alice picks a basis randomly
-							\item Alice transmits the bit using this basis
-							\item Bob measures the bit using a randomly chosen basis.
+							\item Alice picks a basis B randomly
+							\item Alice transmits the bit V using this basis
+							\item Bob measures the bit V using a randomly chosen basis B.
 						\end{enumerate}
 					\item Alice and Bob exchange a list of chosen bases.
 					\item Where the chosen bases match Alice and Bob append the sent / measured bit to the shared key
@@ -312,10 +312,9 @@
 			\end{column}
 			\vrule{}
 			\begin{column}{0.3\textwidth}
-				Basis / Bit encoding:
 				\begin{table}
-					\begin{tabular}{l | c  c}
-						  & 0 & 1 \\
+					\begin{tabular}{c | c  c}
+						 B \textbackslash \; V & 0 & 1 \\
 						  \hline
 						0 & $\myarrow[0]$ & $\myarrow[90]$ \\
 						1 & $\myarrow[45]$ & $\myarrow[-45]$ \\
