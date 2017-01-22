@@ -212,36 +212,33 @@
 			\begin{column}{\textwidth}
 				\vspace{-20pt}
 				\begin{figure}
-					\scalebox{0.38}{\begin{tikzpicture}
+					\scalebox{0.42}{\hspace{-40pt}\begin{tikzpicture}
 					
-						\node at (0,5) {\huge Public};
-						\node at (-5,5) {\huge Alice};
-						\node at (5,5) {\huge Bob};
+						\node at (0,2) {\huge Public};
+						\node at (-5,2) {\huge Alice};
+						\node at (5,2) {\huge Bob};
 						
-						\draw[fill = white] (0,3) circle(1);
 						\draw[fill = yellow] (0,0) circle(1);
 						
-						\node at (0,3) {\huge 9};
-						\node at (0,0) {\huge 5};
+						\node at (0,0) {\huge 23, 5};
 
-						\node[anchor=east] at (-7,3) {\huge Combination Parameter};
-						\node[anchor=east] at (-7,0) {\huge Random numbers};
+						\node[anchor=east] at (-11,0) {\huge Random numbers};
 
 						\onslide<2->{
 							\draw[fill = red] (-5,0) circle(1);
 							\draw[fill = green]  ( 5,0) circle(1);
-							\node at (-5,0) {\huge 7};		
+							\node at (-5,0) {\huge 6};		
 							\node at (5,0) {\huge 3};
 						}
 						
 						\onslide<3->{
 							\draw[fill = orange] (-5,-3) circle(1);
 							\draw[fill = blue] (5,-3) circle(1);
-							\node[anchor=east] at (-7,-3) {\huge Combined};
-							\node at(-5,-3) {\huge 3};
-							\node at(5,-3) {\huge 8};
-							\node[anchor=west] at (7,-3) {\huge (A + B) mod \textbf{9}};
-							\draw[->,ultra thick] (1,3) to[out=0,in=90] (11.3,-2.5);
+							\node[anchor=east] at (-11,-3) {\huge Exponentiation};
+							\node[anchor=east] at (-7,-3) {\huge \textbf{5}\textsuperscript{6} mod \textbf{23}};
+							\node at(-5,-3) {\huge 8};
+							\node at(5,-3) {\huge 10};
+							\node[anchor=west] at (7,-3) {\huge \textbf{5}\textsuperscript{3} mod \textbf{23}};
 							\draw[->, ultra thick] (-5,-1) -- (-5,-2);
 							\draw[->, ultra thick] (0,-1) to[out=-90,in=0] (-4,-3);
 							\draw[->, ultra thick] (5,-1) -- (5,-2);
@@ -251,37 +248,33 @@
 						\onslide<4->{
 							\draw[fill = blue] (-5,-7) circle(1);
 							\draw[fill = orange] (5,-7) circle(1);
-							\node[anchor=east] at (-7,-7) {\huge Exchanged combinations};
-							\node at(-5,-7) {\huge 8};
-							\node at(5,-7) {\huge 3};
-							\draw[->, ultra thick] (-5,-4) to[out=-90,in=180] (4,-7);
-							\draw[->, ultra thick] (5,-4) to[out=-90,in=0] (-4,-7);
-						}
-						
-						\onslide<5->{
-							\draw[fill = red] (-5,-10) circle(1);
-							\draw[fill = green] (5,-10) circle(1);
-							\node[anchor=east] at (-7,-10) {\huge Secrets};
-							\node at(-5,-10) {\huge 7};
-							\node at(5,-10) {\huge 3};
+							\node[anchor=east] at (-11,-7) {\huge Exchange};
+							\node at(-5,-7) {\huge 10};
+							\node at(5,-7) {\huge 8};
+							\draw[->, ultra thick] (-5,-4) to[out=-90,in=175] (4,-7);
+							\draw[->, ultra thick] (5,-4) to[out=-90,in=5] (-4,-7);
 						}
 						
 						\onslide<6->{
-							\draw[fill = sharedsecretcolor] (-5,-13) circle(1);
-							\draw[fill = sharedsecretcolor] (5,-13) circle(1);
-							\node[anchor=east] at (-7,-13) {\huge  Combined};
-							\node at(-5,-13) {\huge 6};
-							\node at(5,-13) {\huge 6};
-							\node[anchor=west] at (7,-13) {\huge (A + B) mod \textbf{9}};
-							\draw[->, ultra thick] (-5,-11) -- (-5,-12);
-							\draw[->, ultra thick] (5,-11) -- (5,-12);
-							\draw[->,ultra thick] (11.3,-3.5) -- (11.3,-12.5);
-							\draw[->,ultra thick] (-4.3,-7.7) to[out=-45,in=45] (-4.3,-12.3);
-							\draw[->,ultra thick] (4.3,-7.7) to[out=-135,in=135] (4.3,-12.3);
+							\draw[fill = sharedsecretcolor] (-5,-10) circle(1);
+							\draw[fill = sharedsecretcolor] (5,-10) circle(1);
+							\node[anchor=east] at (-11,-10) {\huge  Exponentiation};
+							\node at(-5,-10) {\huge 6};
+							\node at(5,-10) {\huge 6};
+							\draw[->, ultra thick] (-5,-8) -- (-5,-9);
+							\draw[->, ultra thick] (5,-8) -- (5,-9);
+							\draw[->,ultra thick] (-4.3,-0.7) to[out=-45,in=45] (-4.3,-9.3);
+							\draw[->,ultra thick] (4.3,-0.7) to[out=-135,in=135] (4.3,-9.3);
+							\draw[->,ultra thick] (0,-1) to[out=-85,in=-180] (4,-10);
+							\draw[->,ultra thick] (0,-1) to[out=-95,in=0] (-4,-10);
+							
+							\node[anchor=east] at (-7,-10) {\huge \textbf{10}\textsuperscript{6} mod \textbf{23}};
+							\node[anchor=west] at (7,-10) {\huge \textbf{8}\textsuperscript{3} mod \textbf{23}};
+
 						}
 
-						\draw[dashed] (-2.5,5.5) -- (-2.5,-14);
-						\draw[dashed] ( 2.5,5.5) -- ( 2.5,-14);
+						\draw[dashed] (-2.5,2.5) -- (-2.5,-11);
+						\draw[dashed] ( 2.5,2.5) -- ( 2.5,-11);
 						
 						
 					\end{tikzpicture}}
