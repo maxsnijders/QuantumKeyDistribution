@@ -298,7 +298,7 @@
 
 	\begin{frame}{BB-84} % Max
 		\begin{columns}
-			\begin{column}{0.7\textwidth}
+			\begin{column}{\textwidth}
 				\begin{enumerate}
 					\item For each bit in the message:
 						\begin{enumerate}
@@ -309,6 +309,23 @@
 					\item Alice and Bob exchange a list of chosen bases.
 					\item Where the chosen bases match Alice and Bob append the sent / measured bit to the shared key
 				\end{enumerate}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{BB-84 Protocol} % Max
+		\begin{columns}
+			\begin{column}{0.7\textwidth}
+				\begin{table}
+					\begin{tabular}{r | c | c | c | c  }
+						Alice's random data & 0 & 1 & 1 & 0 \\
+						Alice's random basis & 1 & 1 & 1 & 0 \\
+						Bob's random basis & 0 & 1 & 0 & 0 \\
+						Alice's sent values & $\myarrow[45]$ & $\myarrow[-45]$ & $\myarrow[-45]$ & $\myarrow[0]$ \\
+						Bob's measured values & ? & 1 & ? & 0 \\
+						Shared key & - & 1 & - & 0 
+					\end{tabular}
+				\end{table}
 			\end{column}
 			\vrule{}
 			\begin{column}{0.3\textwidth}
@@ -324,6 +341,45 @@
 
 			\end{column}
 		\end{columns}
+	\end{frame}
+
+	\begin{frame}{BB-84 example} % Max
+		\begin{columns}
+			\begin{column}{0.7\textwidth}
+				\begin{table}
+					\begin{tabular}{r | c | c | c | c  }
+						Alice's random data & 0 & 1 & 1 & 0 \\
+						Alice's random basis & 1 & 1 & 1 & 0 \\
+						Bob's random basis & 0 & 1 & 0 & 0 \\
+						Alice's sent values & $\myarrow[45]$ & $\myarrow[-45]$ & $\myarrow[-45]$ & $\myarrow[0]$ \\
+						Bob's measured values & ? & 1 & ? & 0 \\
+						Shared key & - & 1 & - & 0 
+					\end{tabular}
+				\end{table}
+			\end{column}
+			\vrule{}
+			\begin{column}{0.3\textwidth}
+				\begin{table}
+					\begin{tabular}{c | c  c}
+						 B \textbackslash \; V & 0 & 1 \\
+						  \hline
+						0 & $\myarrow[0]$ & $\myarrow[90]$ \\
+						1 & $\myarrow[45]$ & $\myarrow[-45]$ \\
+					\end{tabular}
+	
+				\end{table}
+
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{BB-84 Properties} % Max
+		\begin{itemize}
+			\item Matching bases percentage indicator of noise / eavesdroppers
+			\item Only useful for setting up a secure channel, no authentication use
+			\item On-the-fly one time pad generation
+			\item In practice: over 300 km @ 12.7 kbits/second through optical fiber.
+		\end{itemize}
 	\end{frame}
 
 	\begin{frame}{E-91} % Simon
@@ -342,7 +398,9 @@
 
 	\begin{frame}{Vulnerabilities} % Max
 		\begin{itemize}
-			\item Sender basis detection
+			\item Basis choice leak
+			\item Authentication issues
+			\item Pseudo-randomness of basis choice
 		\end{itemize}
 	\end{frame}
 
