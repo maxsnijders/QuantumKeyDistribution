@@ -37,7 +37,9 @@
 }%
 
 % Color mix
-\definecolor{sharedsecretcolor}{RGB}{170,170,0}
+\definecolor{sharedsecretcolor}{RGB}{191,178,64}
+\definecolor{bobrandomseed}{RGB}{0,237,255}
+\definecolor{bobmix}{RGB}{128,237,128}
 
 % Quotes are awesome! (Sometimes)
 
@@ -59,7 +61,7 @@
 	%\section{Introduction} % Simon
 
 	\begin{frame}
-		% We need an empty frame while we're waiting to begin.
+		% Empty slide for talk start
 	\end{frame}
 
 	\begin{frame}
@@ -277,14 +279,14 @@
 
 						\onslide<2->{
 							\draw[fill = red] (-5,0) circle(1);
-							\draw[fill = green]  ( 5,0) circle(1);
+							\draw[fill = bobrandomseed]  ( 5,0) circle(1);
 							\node at (-5,0) {\huge 6};		
 							\node at (5,0) {\huge 3};
 						}
 						
 						\onslide<3->{
 							\draw[fill = orange] (-5,-3) circle(1);
-							\draw[fill = blue] (5,-3) circle(1);
+							\draw[fill = bobmix] (5,-3) circle(1);
 							\node[anchor=east] at (-11,-3) {\huge Exponentiation};
 							\node[anchor=east] at (-7,-3) {\huge \textbf{5}\textsuperscript{6} mod \textbf{23}};
 							\node at(-5,-3) {\huge 8};
@@ -297,7 +299,7 @@
 						}
 						
 						\onslide<4->{
-							\draw[fill = blue] (-5,-7) circle(1);
+							\draw[fill = bobmix] (-5,-7) circle(1);
 							\draw[fill = orange] (5,-7) circle(1);
 							\node[anchor=east] at (-11,-7) {\huge Exchange};
 							\node at(-5,-7) {\huge 10};
@@ -344,7 +346,7 @@
 			}
 			
 			\onslide<3->{
-				\item Exponentiation is easy to compute, hard to invert.
+				\item Exponentiation is easy to compute, hard to invert. (Last week's talk)
 			}
 			
 			\onslide<4->{
@@ -412,9 +414,47 @@
 		\end{columns}
 	\end{frame}
 	
+	\begin{frame}{BB-84 Intercept-Resend Attack} % Max
+		\begin{columns}
+			\begin{column}{0.3\textwidth}
+				\begin{table}
+					\begin{tabular}{c | c | c}
+						A's Basis & E's & B's \\
+						\hline
+						0 & 0 & 0 \\
+						0 & 0 & 1 \\
+						0 & 1 & 0 \\
+						0 & 1 & 1 \\
+						1 & 0 & 0 \\
+						1 & 0 & 1 \\
+						1 & 1 & 1
+					\end{tabular}
+				\end{table}
+			\end{column}
+			\begin{column}{0.7\textwidth}
+				\begin{itemize}
+					\onslide<2->{\item If all bases match Eve is not detectable}
+					\onslide<3->{\item If Alice and Bob's bases don't match Eve is not detectable}
+					\onslide<4->{\item If Alice and Bob's bases do match but Eve's is different then Bob will measure Alice's value 50\% of the time.}
+				\end{itemize}
+				\onslide<5->{$\implies$ Alice and Bob will match values when their bases match \textbf{75\%} of the time. \\}
+				\onslide<6->{$\implies$ Alice and Bob will match values when their bases don't match \textbf{50\%} of the time.}
+			\end{column}
+
+	
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{BB84 - Another Attack}
+		\begin{itemize}
+			\item \onslide<1->{Let's say Eve picks a different basis}
+			\item \onslide<2->{Example on the board}
+		\end{itemize}
+	\end{frame}
+	
 	\begin{frame}{BB-84 Properties} % Max
 		\begin{itemize}
-			\item Matching bases percentage indicator of noise / eavesdroppers
+			\item Matching values percentage indicator of noise / eavesdroppers
 			\item Only useful for setting up a secure channel, no authentication use
 			\item On-the-fly one time pad generation
 			\item In practice: over 300 km @ 12.7 kbits/second through optical fiber.
