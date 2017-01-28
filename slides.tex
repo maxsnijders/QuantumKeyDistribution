@@ -5,6 +5,7 @@
 \documentclass{beamer}
 
 \usepackage{csquotes}
+\usepackage{braket}
 
 %Blablabla front matter....
 
@@ -362,6 +363,53 @@
 
 	% Methods of Quantum Key Exchange
 	\section{Quantum Key Distribution}
+
+	\begin{frame}{Quantum Key Distribution}
+		QKD makes use of fundamental principles of quantum mechanics:
+
+		\begin{enumerate}
+			\item<2-> Measurement changes system {\tiny (unless in
+			eigenstate of observable)}
+
+			\begin{itemize}
+				\item<3-> existence of such measurement guaranteed by
+				existence of complementary observables
+			\end{itemize}
+
+			\item<4-> No-cloning theorem
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{No-cloning theorem}
+		\begin{itemize}
+			\item Consider two Hilbert spaces $H_A \cong H_B$,
+			$\operatorname{dim}H_A \geq 2$.
+
+			\item Want to find unitary operator (time evolution) $U$
+			such that $\forall \ket{\psi} \in H_A, \ket{b} \in H_B: U(\ket{\psi} \otimes \ket{b}) \overset{!}{=} \ket{\psi} \otimes \ket{\psi}$ (up to a phase)
+			
+			\item But then take another $\ket{\phi} \in H_A$:
+				\begin{align*}
+					\braket{\psi|\phi} = \braket{\psi|\phi}\braket{b|b} &= \big(\bra{\psi} \otimes \bra{b}\big) \big(\ket{\phi} \otimes \ket{b}\big) \\
+					&= \big(\bra{\psi} \otimes \bra{b}\big) U^\dagger U \big(\ket{\phi} \otimes \ket{b}\big) \\
+					&= \big(\bra{\psi} \otimes \bra{\psi}\big) \big(\ket{\phi} \otimes \ket{\phi}\big)
+					= \braket{\psi|\phi}^2
+				\end{align*}
+
+				$\implies \braket{\psi|\phi} = 1$, i.e. identical, or $\braket{\psi|\phi} = 0$ \\
+				$\implies$ Can never work with different, non-orthogonal states
+
+			% \item But then for $\ket{\psi} \coloneqq \frac{1}{\sqrt{2}}(\ket{\psi_1} + \ket{\psi_2})$:
+			% 	\begin{align*}
+			% 		U(\ket{\psi} \otimes \ket{b}) &\overset{\text{Def.}}{=} \ket{\psi} \otimes \ket{\psi} \overset{\text{expand}}{=} \text{4 terms} \\
+			% 		U(\ket{\psi} \otimes \ket{b}) &\overset{\text{lin.}}{=} \frac{1}{\sqrt{2}}( U(\ket{\psi_1} \otimes \ket{b}) + U(\ket{\psi_2} \otimes \ket{b})) \\
+			% 		&= \frac{1}{\sqrt{2}}( \ket{\psi_1} \otimes \ket{\psi_1} + \ket{\psi_2} \otimes \ket{\psi_2})
+			% 		&= \text{2 terms} 
+			% 	\end{align*}
+
+		\end{itemize}
+	\end{frame}
+
 
 	\begin{frame}{BB-84 Protocol} % Max
 		\begin{columns}
