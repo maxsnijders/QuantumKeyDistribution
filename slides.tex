@@ -452,6 +452,50 @@
 		\end{itemize}
 	\end{frame}
 	
+	\begin{frame}{BB84 - Error correction}
+		\begin{itemize}
+			\item In practice: Transmissions errorneous
+			\item Moreover, we saw: Eve can eavesdrop at the expense of
+			introducing errors among bits where bases were matched at
+			rate of 25\%
+		\end{itemize}
+		$\implies$ To detect Eve:
+		\begin{itemize}
+			\item Keep systematic error rate (noise level $N$) far below
+			25\%
+			\item Publicly compare small part of the key and compute
+			error rate $E$
+			\begin{itemize}
+				\item $E > N \implies$ discard key
+				\item $E \sim N \implies$ do error correction and proceed
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{BB84 - Privacy amplification}
+		Situation:
+		\begin{itemize}
+			\item Assume error rate was low and Alice and Bob now have
+			same key
+			\item Eve might still have partial knowledge of the key
+		\end{itemize}
+
+		\onslide<2->{
+			Reduce her knowledge further through \textbf{privacy amplification}:
+			\begin{itemize}
+				\item<3-> Publicly announce positions $i, j$ of two bits $b_i, b_j$
+				\item<4-> Replace bit $i$ with $\operatorname{XOR}(b_i, b_j)$,
+				discard bit $j$.
+			\end{itemize}
+		}
+		\onslide<5->{
+			$\implies$ Eve's average knowledge of
+			the key \textbf{decreases} at the expense of decreasing the
+			key length. \onslide<6->{$\rightarrow$ blackboard}
+		}
+	\end{frame}
+
+
 	\begin{frame}{BB-84 Properties} % Max
 		\begin{itemize}
 			\item Matching values percentage indicator of noise / eavesdroppers
