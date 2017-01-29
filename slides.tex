@@ -182,11 +182,34 @@
 	\end{frame}
 
 	\begin{frame}{XOR} % Simon
+		\begin{itemize}
+			\item Take key $K$ of $n$ random bits
+			\item Successively apply $K$ to blocks $A$ of $n$ bits of
+			plaintext by xor'ing corresponding data and key bits:
+			$\operatorname{ENC}_K(A) \coloneqq A \oplus K$
+			\item Example for $n = 4$
+		\end{itemize}
 
+		\begin{table}
+			\begin{tabular}{l | c c c c | c c c c | c }
+				Bit \#     & 1 & 2 & 3 & 4 & \onslide<2->{5 & 6 & 7 & 8 &} \onslide<3->{$\hdots$} \\
+				\hline
+				Plaintext  & 1 & 0 & 1 & 1 & \onslide<2->{0 & 0 & 0 & 1 &} \onslide<3->{$\hdots$} \\
+				%\hline
+				Key        & 1 & 1 & 0 & 1 & \onslide<2->{1 & 1 & 0 & 1 &} \onslide<3->{$\hdots$} \\
+				%\hline
+				Ciphertext & 0 & 1 & 1 & 0 & \onslide<2->{1 & 1 & 0 & 0 &} \onslide<3->{$\hdots$} \\
+			\end{tabular}
+		\end{table}
+
+		\begin{itemize}
+			\item<4-> Susceptible to \textbf{frequency analysis} and \textbf{known plaintext attacks}.
+			\item<5-> Moreover: $\operatorname{ENC}_K(A) \oplus \operatorname{ENC}_K(B) = A \oplus K \oplus B \oplus K = A \oplus B$
+		\end{itemize}
 	\end{frame}
 
 	\begin{frame}{One-Time Pad} % Simon
-		One-time pad = random key of size $n$ ($n=$ length of message),
+		One-time pad = random key that \textbf{is as long as the message},
 		only used once.
 
 		\begin{table}
