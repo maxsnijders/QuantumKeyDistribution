@@ -467,30 +467,31 @@
 							\item<5-> Bob measures photon polarization using the basis
 						% \end{enumerate}
 					\item<6-> Alice \& Bob exchange list of bases over
-					classical channel. If bases $A_i$ \& $B_i$ match
-					$\implies$ append bit $b_i$ to shared key
+					classical channel. \onslide<7->{If bases $A_i$ \&
+					$B_i$ match $\implies$ append bit $b_i$ to shared
+					key}
 				\end{enumerate}
 			\end{column}
-			\begin{column}[t]{0.45\textwidth}
+			\begin{column}[t]{0.5\textwidth}
 				\begin{table}
-					\begin{tabular}{l | c | c | c | c  }
-						i & 1 & 2 & 3 & 4 \\
+					\begin{tabular}{r | c | c | c | c  }
+						Bit \# $i$ & 1 & 2 & 3 & 4 \\
 						\hline
-						$b_i$ & 0 & 1 & 1 & 0 \\
-						\onslide<2->{$A_i$ & $\times$ & $\times$ & $\times$ & $+$} \\
-						\onslide<3->{\pbox{20cm}{Alice\\ sends \vspace{0.3em}} & $\myarrow[45]$ & $\myarrow[-45]$ & $\myarrow[-45]$ & $\myarrow[0]$}
+						Bit $b_i$ & 0 & 1 & 1 & 0 \\
+						\onslide<2->{Basis $A_i$ & $\times$ & $\times$ & $\times$ & $+$} \\
+						\onslide<3->{Alice sends & $\myarrow[45]$ & $\myarrow[-45]$ & $\myarrow[-45]$ & $\myarrow[0]$}
 						\onslide<4->{\\\hline}
-						\onslide<4->{$B_i$ & $+$ & $\times$ & $+$ & $+$} \\
-						\onslide<5->{\pbox{20cm}{Bob\\ sees \vspace{0.3em}} & ? & 1 & ? & 0}
-						\onslide<6->{\\\hline}
-						\onslide<6->{\pbox{20cm}{\vspace{0.3em} Shared\\ key} & - & 1 & - & 0}
+						\onslide<4->{Basis $B_i$ & $+$ & $\times$ & $+$ & $+$} \\
+						\onslide<5->{Bob sees & ? & 1 & ? & 0}
+						\onslide<7->{\\\hline}
+						\onslide<7->{Shared key & - & 1 & - & 0}
 					\end{tabular}
 				\end{table}
 
 				\onslide<3->{
 				\begin{table}
 					\begin{tabular}{l | c c c c}
-						Polariz. & $\myarrow[45]$ & $\myarrow[-45]$ & $\myarrow[0]$ & $\myarrow[90]$ \\
+						Polarization & $\myarrow[45]$ & $\myarrow[-45]$ & $\myarrow[0]$ & $\myarrow[90]$ \\
 						\hline
 						Bit value & 0 & 1 & 0 & 1
 					\end{tabular}
