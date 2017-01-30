@@ -546,10 +546,10 @@
 		\end{itemize}
 		$\implies$ To detect Eve:
 		\begin{itemize}
-			\item Keep systematic error rate (noise level $N$) far below
-			25\%
-			\item Publicly compare small part of the key and compute
-			error rate $E$
+			\item Keep systematic error rate (\textbf{noise level $N$})
+			far below 25\%
+			\item Publicly compare small part of the key (will be discarded)
+			\item Compute \textbf{quantum bit error rate $E$}
 			\begin{itemize}
 				\item $E > N \implies$ discard key
 				\item $E \sim N \implies$ do error correction and proceed
