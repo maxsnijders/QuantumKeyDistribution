@@ -89,8 +89,7 @@
 		\begin{equation}
 			\operatorname{ENC}: \underset{\cong\;\mathbb{N}}{\{\text{plaintexts}\}}
 						\overset{\text{bijective}}{\longrightarrow}
-						\underset{\cong\;\mathbb{N}}{\{\text{ciphertexts
-						}\}}
+						\underset{\cong\;\mathbb{N}}{\{\text{ciphertexts}\}}
 						% \subset
 						% \underset{\cong\;\mathbb{N}}{\{\text{cipher-like
 						% texts}\}}
@@ -187,12 +186,12 @@
 			\item Successively apply $K$ to blocks $A$ of $n$ bits of
 			plaintext by xor'ing corresponding data and key bits:
 			$\operatorname{ENC}_K(A) \coloneqq A \oplus K$
-			\item Example for $n = 4$
+			% \item Example for $n = 4$
 		\end{itemize}
 
 		\begin{table}
 			\begin{tabular}{l | c c c c | c c c c | c }
-				Bit \#     & 1 & 2 & 3 & 4 & \onslide<2->{5 & 6 & 7 & 8 &} \onslide<3->{$\hdots$} \\
+				Bit \#     & 1 & 2 & 3 & n=4 & \onslide<2->{5 & 6 & 7 & 8 &} \onslide<3->{$\hdots$} \\
 				\hline
 				Plaintext  & 1 & 0 & 1 & 1 & \onslide<2->{0 & 0 & 0 & 1 &} \onslide<3->{$\hdots$} \\
 				%\hline
@@ -604,7 +603,6 @@
 			measurements agree
 		\end{itemize}
 	\end{frame}
-
 
 	\begin{frame}{E-91 Security: How to rule out that Eve is listening?}
 		\begin{itemize}
