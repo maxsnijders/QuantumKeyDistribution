@@ -389,20 +389,32 @@
 	\section{Quantum Key Distribution}
 
 	\begin{frame}{Quantum Key Distribution}
+		\textbf{In QKD, quantum states carry the key information.}
+
+		\vspace{1em}
+
+		\onslide<2->{
 		QKD makes use of fundamental principles of quantum mechanics:
 
 		\begin{enumerate}
-			\item<2-> Measurement changes system {\tiny (unless in
+			\item Measurement changes system {\tiny (unless in
 			eigenstate of observable)}
 
-			\begin{itemize}
-				\item<3-> existence of such measurement guaranteed by
-				existence of complementary observables
-			\end{itemize}
+				\begin{itemize}
+					\item<3-> existence of such measurement guaranteed by
+					existence of complementary observables
 
-			\item<4-> No-cloning theorem $\rightarrow$ will prevent Eve
-			from eavesdropping / copying the key material
+					\item<4-> will prevent Eve from measuring quantum
+					states without being detected
+				\end{itemize}
+
+			\item<5-> No-cloning theorem
+				\begin{itemize}
+					\item<6-> will prevent Eve from copying the quantum
+					states for later measurement
+				\end{itemize}
 		\end{enumerate}
+		}
 	\end{frame}
 
 	\begin{frame}{No-cloning theorem}
