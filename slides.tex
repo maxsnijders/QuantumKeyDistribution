@@ -590,8 +590,59 @@
 		\end{itemize}
 	\end{frame}
 
-	\begin{frame}{E-91} % Simon
+	\begin{frame}{E-91 Protocol} % Simon
+		\begin{itemize}
+			\item Conceived of by Artur Ekert (Oxford) in 1991
+			\item Difference to BB-84: Source inbetween Alice and Bob
+			produces pairs of entangled photons in state
+				\begin{align*}
+					\ket{\psi} \coloneqq \frac{1}{\sqrt{2}}(\uparrow \uparrow + \rightarrow
+					\rightarrow) = \frac{1}{\sqrt{2}}(\nearrow \nearrow +
+					\nwarrow \nwarrow)
+				\end{align*}
+			\item If Alice and Bob choose the same basis ($+$ or $\times$) $\implies$
+			measurements agree
+		\end{itemize}
+	\end{frame}
 
+
+	\begin{frame}{E-91 Security: How to rule out that Eve is listening?}
+		\begin{itemize}
+			\item Make sure Bell's inequality is violated when their
+			bases don't agree.
+			\item<2-> To this end: Introduce another basis, e.g.
+				\begin{itemize}
+					\item Alice's bases: $a_1 = +, a_2 = \times$
+					\item Bob's bases: $b_1 = +, b_2 = (+ \text{ rotated by } \frac{\pi}{8})$
+					\item Alice and Bob match 25\% of the time
+					\item Eve will match w/ Bob 50\% of the time
+				\end{itemize}
+			\item<3-> Bell's inequality ($a_i, b_i \in \{\pm 1\}$):
+				\begin{align*}
+					1 \overset{\text{classically}}{\geq}&\, \mathbb{E}(a_1 b_2) + \mathbb{E}(a_2 b_2) - \mathbb{E}(a_2 b_1) \\
+					=& \cos(2 \theta_{a_1 b_2}) + \cos(2 \theta_{a_2 b_2}) - \cos(2 \theta_{a_2 b_1}) \\
+					=& \cos(\frac{\pi}{4}) + \cos(\frac{\pi}{4}) - \cos(\frac{\pi}{2})
+					= \frac{2}{\sqrt{2}} = \sqrt{2} > 1
+				\end{align*}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{E-91 Security Part II}
+		\begin{itemize}
+			\item In practice: Use 4 different bases $Z_\theta$ ($\theta =$ rotation w.r.t. $+$):
+				\begin{itemize}
+					\item Alice's bases: $a_1 \coloneqq Z_0 = +, a_2 \coloneqq Z_{\frac{\pi}{8}}, a_3 \coloneqq Z_{\frac{\pi}{4}} = \times$
+					\item Bob's bases: $\;b_1 \coloneqq Z_0 = +, b_2 \coloneqq Z_{\frac{\pi}{8}}, b_3 \coloneqq Z_{-\frac{\pi}{8}}$
+					\item Alice and Bob match in 2 out of 9 cases
+					\item Eve will match w/ Bob only 33\% of the time.
+				\end{itemize}
+			\item<2-> CHSH inequality w/ $a \coloneqq Z_0, a' \coloneqq Z_{\frac{\pi}{4}}, b \coloneqq Z_{\frac{\pi}{8}}, b' \coloneqq Z_{-\frac{\pi}{8}}$
+				\begin{align*}
+					2 \overset{\text{classically}}{\geq}&\, \mathbb{E}(a b) + \mathbb{E}(a b') + \mathbb{E}(a' b) - \mathbb{E}(a' b') \\
+					=& \cos(2\frac{\pi}{8}) + \cos(2\frac{\pi}{8}) + \cos(2\frac{\pi}{8}) \underbrace{- \cos(2\frac{3\pi}{8})}_{\cos(2\frac{\pi}{8})} \\
+					=& \frac{4}{\sqrt{2}} = 2\sqrt{2} > 2
+				\end{align*}
+		\end{itemize}
 	\end{frame}
 
 	% Authentication Requirement
