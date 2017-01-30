@@ -202,7 +202,8 @@
 		\end{table}
 
 		\begin{itemize}
-			\item<4-> Susceptible to \textbf{frequency analysis} and \textbf{known plaintext attacks}.
+			\item Decryption works the same way: $\operatorname{DEC}_K(\operatorname{ENC}_K(A)) \coloneqq \operatorname{ENC}_K(A) \oplus K = A \oplus K \oplus K = A$
+			\item<4-> Susceptible to \textbf{frequency analysis}, \textbf{known-plaintext attacks} and \textbf{brute force}.
 			\item<5-> Moreover: $\operatorname{ENC}_K(A) \oplus \operatorname{ENC}_K(B) = A \oplus K \oplus B \oplus K = A \oplus B$
 		\end{itemize}
 	\end{frame}
