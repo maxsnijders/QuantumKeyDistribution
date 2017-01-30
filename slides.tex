@@ -7,6 +7,8 @@
 \usepackage{csquotes}
 \usepackage{braket}
 
+\include{shadequote}
+
 %Blablabla front matter....
 
 \title{Quantum Key Distribution}
@@ -44,16 +46,16 @@
 
 % Quotes are awesome! (Sometimes)
 
-\newcommand*{\openquote}{\tikz[remember picture,overlay,xshift=-15pt,yshift=-10pt]
-	\node (OQ) {\fontsize{60}{60}\selectfont``};\kern0pt}
-\newcommand*{\closequote}{\tikz[remember picture,overlay,xshift=15pt,yshift=10pt]
-	\node (CQ) {\fontsize{60}{60}\selectfont''};}
-% select a colour for the shading
-\definecolor{shadecolor}{named}{white}
-% wrap everything in its own environment
-\newenvironment{shadequote}%
-{\begin{quote}\openquote}
-		{\hfill\closequote\end{quote}}
+% \newcommand*{\openquote}{\tikz[remember picture,overlay,xshift=-15pt,yshift=-10pt]
+% 	\node (OQ) {\fontsize{60}{60}\selectfont``};\kern0pt}
+% \newcommand*{\closequote}{\tikz[remember picture,overlay,xshift=15pt,yshift=10pt]
+% 	\node (CQ) {\fontsize{60}{60}\selectfont''};}
+% % select a colour for the shading
+% \definecolor{shadecolor}{named}{white}
+% % wrap everything in its own environment
+% \newenvironment{shadequote}%
+% {\begin{quote}\openquote}
+% 		{\hfill\closequote\end{quote}}
 
 
 % And now for the real deal...
@@ -658,10 +660,19 @@
 		\end{itemize}
 	\end{frame}
 
-	\begin{frame}
-		\begin{center}
-		\includegraphics[width=\textwidth]{images/xkcd-responsible_behavior}
-		\end{center}
+	\begin{frame}{The end}
+		\begin{shadequote}{}
+			Never underestimate the bandwidth of a station wagon full of tapes hurtling down the highway.
+		\end{shadequote}
+
+		\vspace{1em}
+		Updated version:
+		\vspace{0.5em}
+
+
+		\begin{shadequote}{}
+			Never underestimate the bandwidth of a 747 filled with hard drives.
+		\end{shadequote}
 	\end{frame}
 
 
