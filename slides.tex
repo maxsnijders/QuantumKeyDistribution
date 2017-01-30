@@ -424,10 +424,10 @@
 			\item Consider two Hilbert spaces $H_A \cong H_B$,
 			$\operatorname{dim}H_A \geq 2$.
 
-			\item Want to find unitary operator (time evolution) $U$
+			\item<2-> Want to find unitary operator (time evolution) $U$
 			such that $\forall \ket{\psi} \in H_A, \ket{b} \in H_B: U(\ket{\psi} \otimes \ket{b}) \overset{!}{=} \ket{\psi} \otimes \ket{\psi}$ (up to a phase)
 			
-			\item But then take another $\ket{\phi} \in H_A$:
+			\item<3-> But then take another $\ket{\phi} \in H_A$:
 				\begin{align*}
 					\braket{\psi|\phi} = \braket{\psi|\phi}\braket{b|b} &= \big(\bra{\psi} \otimes \bra{b}\big) \big(\ket{\phi} \otimes \ket{b}\big) \\
 					&= \big(\bra{\psi} \otimes \bra{b}\big) U^\dagger U \big(\ket{\phi} \otimes \ket{b}\big) \\
@@ -435,8 +435,8 @@
 					= \braket{\psi|\phi}^2
 				\end{align*}
 
-				$\implies \braket{\psi|\phi} = 1$, i.e. identical, or $\braket{\psi|\phi} = 0$ \\
-				$\implies$ Can never work with different, non-orthogonal states
+				\onslide<4->{$\implies \braket{\psi|\phi} = 1$, i.e. identical, or $\braket{\psi|\phi} = 0$ \\
+				$\implies$ Can never work with different, non-orthogonal states}
 
 			% \item But then for $\ket{\psi} \coloneqq \frac{1}{\sqrt{2}}(\ket{\psi_1} + \ket{\psi_2})$:
 			% 	\begin{align*}
