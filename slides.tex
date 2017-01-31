@@ -99,8 +99,7 @@
 						\nonumber
 		\end{equation}
 		\begin{itemize}
-			\item The function should be easily reversible for the
-			recipient but impossible to reverse for a 3rd party
+			\item Encryption function hard to reverse for a 3\textsuperscript{rd} party.
 
  			\item \textbf{Symmetric encryption:} $\operatorname{ENC}$
  			and $\operatorname{ENC}^{-1}$ are generated from one secret
@@ -147,9 +146,13 @@
 				\begin{itemize}
 					\onslide<10->\item \enquote{HELLO} $\rightarrow$ \enquote{BYFFI}
 					\onslide<12->\item 26 options
-					\onslide<13->\item Vulnerable to \textbf{brute-force} attack.
-					\onslide<13->\item Vulnerable to \textbf{frequency analysis}.
-					\onslide<13->\item Vulnerable to \textbf{known-plaintext} attacks.
+					\onslide<13->{\item Vulnerabilities\onslide<14->{:}
+						\begin{itemize}
+							\item<14-> Brute-force attacks
+							\item<15-> Frequency analysis
+							\item<16-> Known-plaintext attacks
+						\end{itemize}
+					}
 				\end{itemize}
 			\end{column}
 		\end{columns}
@@ -176,8 +179,12 @@
 				\begin{itemize}
 					\onslide<7->\item \enquote{ABBACD} $\rightarrow$ \enquote{GXXGCJ}
 					\onslide<8->\item $26 \cdot 25 \cdot 24 \cdot \hdots \cdot 1 = 26! \approx 10^{26}$ options
-					\onslide<9->\item Vulnerable to \textbf{frequency analysis}.
-					\onslide<9->\item Vulnerable to \textbf{known-plaintext} attacks.
+					\onslide<9->{\item Vulnerabilities\onslide<10->{:}
+						\begin{itemize}
+							\item<10-> frequency analysis.
+							\item<11-> known-plaintext attacks.	
+						\end{itemize}
+					} 
 				\end{itemize}
 			\end{column}
 		\end{columns}
@@ -423,7 +430,7 @@
 		}
 	\end{frame}
 
-	\begin{frame}{No-cloning theorem}
+	\begin{frame}{No-cloning theorem} % Simon
 		\begin{itemize}
 			\item Consider two Hilbert spaces $H_A \cong H_B$,
 			$\operatorname{dim}H_A \geq 2$.
@@ -454,7 +461,7 @@
 	\end{frame}
 
 	\begin{frame}{The BB-84 Protocol} % Max
-		Introduction / setting
+		$\rightarrow$ Blackoard	
 	\end{frame}
 
 	\begin{frame}%{The BB-84 Protocol}
@@ -557,22 +564,8 @@
 	
 	\begin{frame}{BB-84 – Intercept-Resend Attack} % Max
 		\begin{columns}
-			\begin{column}{0.3\textwidth}
-				\begin{table}
-					\begin{tabular}{c | c | c}
-						A's Basis & E's & B's \\
-						\hline
-						0 & 0 & 0 \\
-						0 & 0 & 1 \\
-						0 & 1 & 0 \\
-						0 & 1 & 1 \\
-						1 & 0 & 0 \\
-						1 & 0 & 1 \\
-						1 & 1 & 1
-					\end{tabular}
-				\end{table}
-			\end{column}
-			\begin{column}{0.7\textwidth}
+			\begin{column}{\textwidth}
+				Eve's detectability:
 				\begin{itemize}
 					\onslide<2->{\item If all bases match Eve is not detectable}
 					\onslide<3->{\item If Alice and Bob's bases don't match Eve is not detectable}
@@ -589,15 +582,16 @@
 	\begin{frame}{BB-84 – Error correction}
 		\begin{itemize}
 			\item In practice: Transmissions erroneous
-			\item<2-> Moreover, we saw: Eve can eavesdrop at the expense of
-			introducing errors among bits where bases were matched at
-			rate of 25\%
+			\item<2-> Eavesdropping: $25\%$ error rate
 		\end{itemize}
 		$\implies$ To detect Eve:
 		\begin{itemize}
 			\item<3-> Keep systematic error rate (\textbf{noise level $N$})
-			far below 25\%
-			\item<4-> Publicly compare small part of the key (will be discarded)
+			far below $25\%$
+				\begin{itemize}
+					\item \onslide<3->{Eve will eavesdrop on every n\textsuperscript{th} bit if error rate is $\frac{25\%}{n}$}
+
+				\end{itemize}
 			\item<5-> Compute \textbf{quantum bit error rate $E$}
 			\begin{itemize}
 				\item $E > N \implies$ discard key
@@ -609,8 +603,7 @@
 	\begin{frame}{BB-84 – Privacy amplification}
 		Situation:
 		\begin{itemize}
-			\item Assume error rate was low and Alice and Bob now have
-			same key
+			\item Alice and Bob now share a key
 			\item Eve might still have partial knowledge of the key
 		\end{itemize}
 
@@ -715,7 +708,7 @@
 	\end{frame}
 
 	\begin{frame}{The end}
-		\begin{shadequote}{}
+		\begin{shadequote}{- Andrew S. Tanenbaum}
 			Never underestimate the bandwidth of a station wagon full of tapes hurtling down the highway.
 		\end{shadequote}
 
