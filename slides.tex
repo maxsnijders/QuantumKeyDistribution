@@ -187,7 +187,7 @@
 		\begin{itemize}
 			\item Take key $K$ of $n$ random bits
 			\item Successively apply $K$ to blocks $A$ of $n$ bits of
-			plaintext by xor'ing corresponding data and key bits:
+			plaintext by xor'ing data and key bits:
 			$\operatorname{ENC}_K(A) \coloneqq A \oplus K$
 			% \item Example for $n = 4$
 		\end{itemize}
@@ -227,17 +227,24 @@
 			\end{tabular}
 		\end{table}
 
-		\textbf{Unbreakable} \onslide<6>{since:}
+		\textbf{Unbreakable} \onslide<6-7>{since:}
 
-		\only<7>{\vspace{1em}\begin{center}\includegraphics[width=0.2\textwidth]{images/obama_not_bad.jpg}\end{center}}
+		\only<8>{\vspace{1em}\begin{center}\includegraphics[width=0.2\textwidth]{images/obama_not_bad.jpg}\end{center}}
 
-		\onslide<6>{No correlation between encrypted bits at positions i and j (or
-		between subsequent encrypted messages). \linebreak $\implies$
-		Every possible plaintext can be obtained from the ciphertext by
-		choosing the right key. \linebreak $\implies$ No way to find out
-		whether key / plaintext is correct.}
+		\onslide<6-7>{
+		\begin{itemize}
+			\item<6-> No correlation
+			\item<7-> Every plaintext can be obtained
+		\end{itemize}
+		}
+	
+		% \onslide<6>{No correlation between encrypted bits at positions i and j (or
+		% between subsequent encrypted messages). \linebreak $\implies$
+		% Every possible plaintext can be obtained from the ciphertext by
+		% choosing the right key. \linebreak $\implies$ No way to find out
+		% whether key / plaintext is correct.}
 
-		\vspace{3em}
+		\vspace{6em}
 
 	\end{frame}
 
@@ -252,28 +259,24 @@
 		\onslide<2->{Two ways:}
 
 		\begin{enumerate}
-			\onslide<2->{
-			\item Meet in person every time we want to exchange a
-			message. \only<3>{
-			% Look of disapproval ಠ_ಠ
-			% Download the "Kedage" font here: http://brahmi.sourceforge.net/
-			% \vspace{1em}
-			% \begin{center}
-			% \fontsize{50pt}{12pt}
-			\textbf{{\fontspec{Kedage} ಠ}\_{\fontspec{Kedage} ಠ}}
-			% \end{center}
-			}
-			}
+			\item<2-> Meet in person every time %we want to exchange a message. 
 
-			\onslide<4->{
-			\item Meet in person once, exchange a whole stack of paper
-			with a lot of keys for a lot of future messages.
-			}
+			% \only<3>{
+			% % Look of disapproval ಠ_ಠ
+			% % Download the "Kedage" font here: http://brahmi.sourceforge.net/
+			% % \vspace{1em}
+			% % \begin{center}
+			% % \fontsize{50pt}{12pt}
+			% \textbf{{\fontspec{Kedage} ಠ}\_{\fontspec{Kedage} ಠ}}
+			% % \end{center}
+			% }
+
+ 			\item<3-> Meet in person once % exchange a whole stack of paper with a lot of keys for a lot of future messages.
 		\end{enumerate}
 
-		\onslide<5->{
-		Okay, we don't actually have to meet in person…
-		}
+		% \onslide<5->{
+		% Okay, we don't actually have to meet in person…
+		% }
 
 	\end{frame}
 
@@ -366,20 +369,20 @@
 	
 	\begin{frame}{Diffie-Hellman Details} % Max
 		\begin{itemize}
-			\onslide<2->{
-				\item Choice of the two publicly known numbers not random: exponentiation and then taking the modulus should have maximum range and spread:
-					\begin{align*}
-						5^n \; \text{mod} \; 23 = \; &\mathbf{1}, \mathbf{5}, 2, 10, 4, 20, 8, 17, 16, 11, 9, 22, \\&18, 21, 13, 19, 3, 15, 6, 7, 12, 14, \mathbf{1}, \mathbf{5}, \hdots
-					\end{align*}
-			}
+			% \onslide<2->{
+			% 	\item Choice of the two publicly known numbers not random: exponentiation and then taking the modulus should have maximum range and spread:
+			% 		\begin{align*}
+			% 			5^n \; \text{mod} \; 23 = \; &\mathbf{1}, \mathbf{5}, 2, 10, 4, 20, 8, 17, 16, 11, 9, 22, \\&18, 21, 13, 19, 3, 15, 6, 7, 12, 14, \mathbf{1}, \mathbf{5}, \hdots
+			% 		\end{align*}
+			% }
 
-			\item<3-> Exponentiation is hard to invert classically
+			\item Exponentiation is hard to invert classically
 			(\enquote{discrete logarithm problem})
 
-			\item<4-> Impractical for one-time pad use
-			\item<5-> Insecure in light of quantum algorithms: discrete
-			logarithm similar to integer factorization (see last week's
-			talk)
+			\item<2-> Impractical for one-time pad use
+			\item<3-> Insecure in light of quantum algorithms: \\
+			discrete logarithm $\sim$ integer factorization ($\rightarrow$ last
+			week)
 		\end{itemize}
 	\end{frame}
 
@@ -404,16 +407,16 @@
 			eigenstate of observable)}
 
 				\begin{itemize}
-					\item<3-> existence of such measurement guaranteed by
-					existence of complementary observables
+					% \item<3-> existence of such measurement guaranteed by
+					% existence of complementary observables
 
-					\item<4-> will prevent Eve from measuring quantum
+					\item<3-> will prevent Eve from measuring quantum
 					states without being detected
 				\end{itemize}
 
-			\item<5-> No-cloning theorem
+			\item<4-> No-cloning theorem
 				\begin{itemize}
-					\item<6-> will prevent Eve from copying the quantum
+					\item<5-> will prevent Eve from copying the quantum
 					states for later measurement
 				\end{itemize}
 		\end{enumerate}
@@ -460,10 +463,10 @@
 				\begin{enumerate}
 					% \item $\forall i=0, 1, …, n$:
 					% 	\begin{enumerate}
-							\item Alice chooses bit value $b_i \in \{0,1\}$ randomly
-							\item<2-> Alice picks basis $A_i \in \{+, \times\}$ randomly
+							\item Alice chooses bit value $b_i \in \{0,1\}$ % randomly
+							\item<2-> Alice picks basis $A_i \in \{+, \times\}$ % randomly
 							\item<3-> Alice encodes $b_i$ as polarized photon using basis
-							\item<4-> Bob picks basis $B_i \in \{+, \times\}$ randomly
+							\item<4-> Bob picks basis $B_i \in \{+, \times\}$ % randomly
 							\item<5-> Bob measures photon polarization using the basis
 						% \end{enumerate}
 					\item<6-> Alice \& Bob exchange list of bases over
@@ -583,26 +586,19 @@
 		\end{columns}
 	\end{frame}
 	
-	\begin{frame}{BB-84 – Another Attack}
-		\begin{itemize}
-			\item \onslide<1->{Let's say Eve picks a different basis}
-			\item \onslide<2->{Example on the board}
-		\end{itemize}
-	\end{frame}
-	
 	\begin{frame}{BB-84 – Error correction}
 		\begin{itemize}
 			\item In practice: Transmissions erroneous
-			\item Moreover, we saw: Eve can eavesdrop at the expense of
+			\item<2-> Moreover, we saw: Eve can eavesdrop at the expense of
 			introducing errors among bits where bases were matched at
 			rate of 25\%
 		\end{itemize}
 		$\implies$ To detect Eve:
 		\begin{itemize}
-			\item Keep systematic error rate (\textbf{noise level $N$})
+			\item<3-> Keep systematic error rate (\textbf{noise level $N$})
 			far below 25\%
-			\item Publicly compare small part of the key (will be discarded)
-			\item Compute \textbf{quantum bit error rate $E$}
+			\item<4-> Publicly compare small part of the key (will be discarded)
+			\item<5-> Compute \textbf{quantum bit error rate $E$}
 			\begin{itemize}
 				\item $E > N \implies$ discard key
 				\item $E \sim N \implies$ do error correction and proceed
@@ -723,14 +719,14 @@
 			Never underestimate the bandwidth of a station wagon full of tapes hurtling down the highway.
 		\end{shadequote}
 
-		\vspace{1em}
-		This is often updated to:
-		\vspace{0.5em}
+		% \vspace{1em}
+		% This is often updated to:
+		% \vspace{0.5em}
 
 
-		\begin{shadequote}{}
-			Never underestimate the bandwidth of a 747 filled with hard drives.
-		\end{shadequote}
+		% \begin{shadequote}{}
+		% 	Never underestimate the bandwidth of a 747 filled with hard drives.
+		% \end{shadequote}
 	\end{frame}
 
 
