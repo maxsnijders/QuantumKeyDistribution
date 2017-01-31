@@ -99,19 +99,10 @@
 						\nonumber
 		\end{equation}
 		\begin{itemize}
-			\item Encryption function hard to reverse for a 3\textsuperscript{rd} party.
+			\item<2-> Encryption function hard to reverse for a 3\textsuperscript{rd} party.
 
- 			\item \textbf{Symmetric encryption:} $\operatorname{ENC}$
- 			and $\operatorname{ENC}^{-1}$ are generated from one secret
- 			number, referred to as \textbf{the shared secret} or
- 			\textbf{secret key}.
-
- 			\item \textbf{Asymmetric encryption:} $\operatorname{ENC}$
- 			is generated from a \textbf{public key}, known to everyone
- 			and specific to the recipient, $\operatorname{ENC}^{-1}$
- 			generated from a \textbf{private key}, known only to the
- 			recipient.
-
+ 			\item<3-> Symmetric (\textit{shared secret})
+ 			\item<4-> Asymmetric (\textit{public/private key})
 		\end{itemize}
 	\end{frame}
 
@@ -144,7 +135,11 @@
 			\end{column}
 			\begin{column}{0.4\textwidth}
 				\begin{itemize}
-					\onslide<10->\item \enquote{HELLO} $\rightarrow$ \enquote{BYFFI}
+					\onslide<3-4>\item \enquote{H} $\rightarrow$ \enquote{B}
+					\onslide<5-6>\item \enquote{HE} $\rightarrow$ \enquote{BY}
+					\onslide<7-8>\item \enquote{HELL} $\rightarrow$ \enquote{BYFF}
+					\onslide<9->\item \enquote{HELLO} $\rightarrow$ \enquote{BYFFI}
+
 					\onslide<12->\item 26 options
 					\onslide<13->{\item Vulnerabilities\onslide<14->{:}
 						\begin{itemize}
@@ -159,6 +154,7 @@
 	\end{frame}
 
 	\begin{frame}{Permutation Cipher} % Max
+		Every character gets mapped to a unique character 
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
 				\begin{figure}
@@ -192,7 +188,7 @@
 
 	\begin{frame}{XOR} % Simon
 		\begin{itemize}
-			\item Take key $K$ of $n$ random bits
+			\item Key $K$ of $n$ bits
 			\item Successively apply $K$ to blocks $A$ of $n$ bits of
 			plaintext by xor'ing data and key bits:
 			$\operatorname{ENC}_K(A) \coloneqq A \oplus K$
@@ -212,7 +208,7 @@
 		\end{table}
 
 		\begin{itemize}
-			\item Decryption works the same way: $\operatorname{DEC}_K(\operatorname{ENC}_K(A)) \coloneqq \operatorname{ENC}_K(A) \oplus K = A \oplus K \oplus K = A$
+			\item Decryption: $\operatorname{DEC}_K(\operatorname{ENC}_K(A)) \coloneqq \operatorname{ENC}_K(A) \oplus K = A \oplus K \oplus K = A$
 			\item<4-> Susceptible to \textbf{frequency analysis}, \textbf{known-plaintext attacks} and \textbf{brute force}.
 			\item<5-> Moreover: $\operatorname{ENC}_K(A) \oplus \operatorname{ENC}_K(B) = A \oplus K \oplus B \oplus K = A \oplus B$
 		\end{itemize}
@@ -220,7 +216,7 @@
 
 	\begin{frame}{One-Time Pad} % Simon
 		One-time pad = random key that \textbf{is as long as the message},
-		only used once.
+		only used \textbf{once}.
 
 		\begin{table}
 			\begin{tabular}{l | c c c c c c c c }
@@ -241,7 +237,7 @@
 		\onslide<6-7>{
 		\begin{itemize}
 			\item<6-> No correlation
-			\item<7-> Every plaintext can be obtained
+			\item<7-> Any plaintext $\iff$ any ciphertext
 		\end{itemize}
 		}
 	
@@ -586,7 +582,7 @@
 			\item In practice: Transmissions erroneous
 			\item<2-> Eavesdropping: $25\%$ error rate
 		\end{itemize}
-		$\implies$ To detect Eve:
+		\onslide<3->{$\implies$ To detect Eve:}
 		\begin{itemize}
 			\item<3-> Keep systematic error rate (\textbf{noise level $N$})
 			far below $25\%$
@@ -594,7 +590,7 @@
 					\item \onslide<3->{Eve will eavesdrop on every n\textsuperscript{th} bit if error rate is $\frac{25\%}{n}$}
 
 				\end{itemize}
-			\item<5-> Compute \textbf{quantum bit error rate $E$}
+			\item<4-> Compute \textbf{quantum bit error rate $E$}
 			\begin{itemize}
 				\item $E > N \implies$ discard key
 				\item $E \sim N \implies$ do error correction and proceed
@@ -610,7 +606,7 @@
 		\end{itemize}
 
 		\onslide<2->{
-			Reduce her knowledge further through \textbf{privacy amplification}:
+			Reduce her knowledge through \textbf{privacy amplification}:
 			\begin{itemize}
 				\item<3-> Publicly announce positions $i, j$ of two bits $b_i, b_j$
 				\item<4-> Replace bit $i$ with $\operatorname{XOR}(b_i, b_j)$,
